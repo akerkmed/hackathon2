@@ -17,6 +17,7 @@ import { Avatar, Badge, Button } from "@/components/ui";
 import { LanguageMenu } from "@/components/language-menu";
 import { PresentationButton } from "@/components/presentation/presentation-provider";
 import { ToastViewport } from "@/components/toast-viewport";
+import { SaharanStar } from "@/components/saharan";
 import { useSession } from "@/components/providers/session-provider";
 import { COMMON, NAV, t } from "@/lib/copy";
 import { cn } from "@/lib/format";
@@ -48,8 +49,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const openCases = snapshot?.cases.filter((item) => item.status === "EXECUTING").length ?? 0;
 
   return (
-    <div className="min-h-dvh bg-cream">
+    <div className="min-h-dvh sahara-wash">
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[16.5rem] flex-col border-r border-line-soft bg-paper-soft/80 px-4 pb-4 pt-5 backdrop-blur-xl lg:flex">
+        <div className="saharan-rule absolute inset-x-0 top-0 opacity-50" aria-hidden />
         <div className="px-2">
           <Brand href="/space" />
         </div>
@@ -74,7 +76,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 className={cn(
                   "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-[0.82rem] font-semibold transition-all",
                   active
-                    ? "bg-forest text-paper shadow-[0_10px_24px_-16px_rgba(8,37,27,0.65)]"
+                    ? "bg-forest text-paper shadow-[0_10px_24px_-16px_rgba(8,38,48,0.65)]"
                     : "text-ink-soft hover:bg-forest/5 hover:text-forest",
                 )}
               >
@@ -117,14 +119,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             ))}
             <div className="ml-auto text-right">
               <p className="text-[0.7rem] font-bold text-forest">Yasmine, Mehdi, Adam</p>
-              <p className="text-[0.6rem] text-muted">{snapshot?.citizen.city ?? "Casablanca"}</p>
+              <p className="text-[0.6rem] text-muted">{snapshot?.citizen.city ?? "Laâyoune"}</p>
             </div>
           </div>
         </div>
 
         <div className="mt-auto space-y-3 pt-4">
-          <div className="rounded-2xl bg-forest p-3.5 text-paper noise">
-            <div className="flex items-center gap-2">
+          <div className="relative overflow-hidden rounded-2xl bg-forest p-3.5 text-paper noise">
+            <SaharanStar className="absolute -right-3 -top-3 size-16 text-lime/10" />
+            <div className="relative flex items-center gap-2">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-lime opacity-60" />
                 <span className="relative inline-flex size-2 rounded-full bg-lime" />
@@ -163,6 +166,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <div className="lg:pl-[16.5rem]">
         <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-line-soft bg-cream/85 px-4 backdrop-blur-xl md:px-6 lg:px-8">
+          <div className="saharan-rule absolute inset-x-0 bottom-0 opacity-30" aria-hidden />
           <Link href="/space" className="lg:hidden" aria-label="M3ak">
             <BrandMark />
           </Link>
@@ -173,7 +177,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 {t(COMMON.demoData, lang)}
               </span>
             </div>
-            <p className="hidden text-[0.65rem] text-muted sm:block">{t(COMMON.simulated, lang)} · {snapshot?.citizen.city ?? "Casablanca"}</p>
+            <p className="hidden text-[0.65rem] text-muted sm:block">{t(COMMON.simulated, lang)} · {snapshot?.citizen.city ?? "Laâyoune"}</p>
           </div>
 
           <PresentationButton lang={lang} className="hidden sm:inline-flex" />

@@ -51,8 +51,8 @@ export default function SpacePage() {
   const monthly = eligible.filter((b) => b.cadence === "MONTHLY").reduce((sum, b) => sum + b.amount, 0);
   const yearly = oneOff + monthly * 12;
   const nextAppointments = [
-    { date: "2026-11-12", time: "10:30", label: t(SPACE.appointmentDeclaration, lang), place: "Commune de Casablanca — Maârif", tone: "emerald" },
-    { date: "2026-11-17", time: "09:30", label: t(SPACE.appointmentVaccine, lang), place: "CSB Maârif", tone: "sky" },
+    { date: "2026-11-12", time: "10:30", label: t(SPACE.appointmentDeclaration, lang), place: "Commune de Laâyoune — Centre", tone: "emerald" },
+    { date: "2026-11-17", time: "09:30", label: t(SPACE.appointmentVaccine, lang), place: "CSB Laâyoune — Centre", tone: "sky" },
     { date: "2026-11-20", time: "—", label: t(SPACE.appointmentCertificate, lang), place: "Watiqa · registered mail", tone: "gold" },
     { date: deadline, time: "—", label: t(SPACE.deadlineLabel, lang), place: "30-day legal limit", tone: "coral" },
   ];
@@ -160,8 +160,8 @@ export default function SpacePage() {
             <p className="mt-1 text-[0.68rem] text-paper/60">{t(SPACE.foundOneOff, lang)}</p>
             <div className="mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-lime px-3 py-1.5">
               <span className="text-[0.82rem] font-bold text-forest-deep">{formatMoney(monthly, lang)}</span>
-              <span className="text-[0.58rem] font-bold text-forest/60">{t(SPACE.monthly, lang)}</span>
-              <span className="text-[0.55rem] font-medium text-forest/60">· {t(SPACE.foundMonthly, lang)}</span>
+              <span className="text-[0.58rem] font-bold text-forest/80">{t(SPACE.monthly, lang)}</span>
+              <span className="text-[0.55rem] font-medium text-forest/80">· {t(SPACE.foundMonthly, lang)}</span>
             </div>
             <div className="mt-4 flex items-center justify-between rounded-xl border border-paper/15 bg-paper/5 px-3 py-2">
               <span className="text-[0.55rem] uppercase tracking-[0.1em] text-paper/50">{t(SPACE.yearlyValue, lang)}</span>
@@ -183,7 +183,7 @@ export default function SpacePage() {
       <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
         {[
           { value: snapshot.metrics.verifiedDocuments, label: t(SPACE.statsDocs, lang), icon: FileCheck2, tone: "bg-mint-soft text-forest" },
-          { value: plan?.actions.length ?? 6, label: t(SPACE.statsServices, lang), icon: Sparkles, tone: "bg-lime-soft text-[#4c5e12]" },
+          { value: plan?.actions.length ?? 6, label: t(SPACE.statsServices, lang), icon: Sparkles, tone: "bg-lime-soft text-[#6f4f10]" },
           { value: daysLeft, label: t(SPACE.statsDeadline, lang), icon: Clock3, tone: "bg-coral-soft text-[#9d3d25]" },
           { value: snapshot.metrics.timeSavedHours, label: t(SPACE.statsSaved, lang), icon: CalendarDays, tone: "bg-gold-soft text-[#7d5a16]" },
         ].map((stat) => {

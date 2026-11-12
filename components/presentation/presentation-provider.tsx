@@ -469,7 +469,7 @@ export function PresentationProvider({ children }: { children: ReactNode }) {
                 style={{ left: rect.left, top: rect.top, width: rect.width, height: rect.height }}
               />
               <div
-                className="pointer-events-none fixed rounded-[1.4rem] border-2 border-lime shadow-[0_0_0_1px_rgba(8,37,27,0.35),0_0_48px_rgba(216,241,125,0.55)] transition-all duration-500 ease-out"
+                className="pointer-events-none fixed rounded-[1.4rem] border-2 border-lime shadow-[0_0_0_1px_rgba(8,38,48,0.35),0_0_48px_rgba(227,173,78,0.55)] transition-all duration-500 ease-out"
                 style={{ left: rect.left, top: rect.top, width: rect.width, height: rect.height }}
                 aria-hidden
               />
@@ -609,7 +609,7 @@ export function PresentationProvider({ children }: { children: ReactNode }) {
                     disabled={!ready}
                     className={cn(
                       "inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[0.62rem] font-bold transition-colors disabled:opacity-40",
-                      playing ? "bg-paper/10 text-paper/70 hover:bg-paper/15 hover:text-paper" : "bg-lime text-forest-deep hover:bg-[#c9e967]",
+                      playing ? "bg-paper/10 text-paper/70 hover:bg-paper/15 hover:text-paper" : "bg-lime text-forest-deep hover:bg-[#d9a946]",
                     )}
                     aria-label={playing ? t(PRESENTATION.pause, lang) : t(PRESENTATION.resume, lang)}
                     aria-pressed={!playing}
@@ -620,7 +620,7 @@ export function PresentationProvider({ children }: { children: ReactNode }) {
                   <button
                     type="button"
                     onClick={next}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-lime px-3 text-[0.62rem] font-bold text-forest-deep transition-colors hover:bg-[#c9e967]"
+                    className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-lime px-3 text-[0.62rem] font-bold text-forest-deep transition-colors hover:bg-[#d9a946]"
                   >
                     <span>
                       {index === total - 1

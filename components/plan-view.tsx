@@ -276,7 +276,7 @@ export function ReceiptCard({
       <div className={cn("grid gap-4 p-4 sm:p-5", !compact && "sm:grid-cols-[auto_1fr]")}>
         <div className="flex flex-col items-center gap-2">
           <div className="rounded-2xl border border-line bg-white p-2">
-            <QRCodeSVG value={verifyUrl} size={compact ? 86 : 112} fgColor="#0d3a2a" bgColor="#ffffff" level="M" />
+            <QRCodeSVG value={verifyUrl} size={compact ? 86 : 112} fgColor="#123c4a" bgColor="#ffffff" level="M" />
           </div>
           <button onClick={copy} className="inline-flex items-center gap-1 text-[0.58rem] font-bold text-emerald hover:underline">
             {copied ? <Check className="size-3" /> : <Copy className="size-3" />}

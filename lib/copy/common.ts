@@ -107,7 +107,7 @@ export const COMMON = {
   speak: L("Parler", "تحدث", "Hder", "Speak"),
   stop: L("Arrêter", "إيقاف", "7bes", "Stop"),
   simulatedData: L("Toutes les données sont simulées. Prototype de hackathon, non affilié à une administration.", "كل البيانات محاكاة. نموذج هاكاثون غير تابع لأي إدارة.", "Kolchi simulé. Prototype hackathon, machi tab3 l administration.", "All data is simulated. Hackathon prototype, not affiliated with any administration."),
-  madeIn: L("Conçu à Casablanca pour les citoyens", "صُمم في الدار البيضاء من أجل المواطنين", "Msawb f Casablanca l les citoyens", "Built in Casablanca for citizens"),
+  madeIn: L("Conçu à Laâyoune, pour tout le Maroc", "صُمم في العيون، من أجل كل المغرب", "Msawb f Laâyoune, l kol l Maghrib", "Built in Laâyoune, for all of Morocco"),
 } satisfies Record<string, Localized | string>;
 
 export const STATUS_LABEL = {

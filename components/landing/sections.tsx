@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Check, Coins, KeyRound, QrCode, ShieldCheck, 
 import type { Lang } from "@/lib/domain/types";
 import { LANDING, t } from "@/lib/copy";
 import { Button } from "@/components/ui";
+import { DuneHorizon, SaharanStar } from "@/components/saharan";
 import { cn, formatMoney } from "@/lib/format";
 
 const FEATURE_ICONS = [Users, Coins, ShieldCheck, KeyRound, QrCode, Smartphone];
@@ -16,7 +17,8 @@ export function StatsStrip({ lang }: { lang: Lang }) {
     { value: "0", label: lang === "ar" ? "استمارة مطلوبة" : lang === "en" ? "forms required" : "formulaire requis" },
   ];
   return (
-    <section className="border-y border-line/70 bg-paper/55">
+    <section className="relative overflow-hidden border-y border-line/70 bg-paper/55">
+      <div className="saharan-rule opacity-40" aria-hidden />
       <div className="container-page grid grid-cols-2 divide-x divide-line/60 md:grid-cols-4">
         {stats.map((stat, index) => (
           <div key={stat.label} className={cn("px-5 py-6 text-center md:py-7", index % 2 === 0 ? "border-l-0" : "")}>
@@ -169,8 +171,13 @@ export function FinalCta({ lang }: { lang: Lang }) {
       <div className="relative overflow-hidden rounded-[2.5rem] bg-lime px-6 py-14 text-center sm:px-12 sm:py-20 noise">
         <div className="pointer-events-none absolute -left-20 -top-20 size-64 rounded-full bg-paper/40 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -bottom-24 -right-16 size-72 rounded-full bg-emerald/15 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute right-8 top-8 size-28 rounded-full border border-forest/15 bg-gold/30" aria-hidden />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 text-forest/15">
+          <DuneHorizon className="h-full w-full" />
+        </div>
+        <SaharanStar className="pointer-events-none absolute left-8 top-10 size-10 text-forest/10" />
         <div className="relative mx-auto max-w-3xl">
-          <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-forest/60">M3ak · معك</p>
+          <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-forest/80">M3ak · معك</p>
           <h2 className="display-title mt-4 text-balance text-[clamp(2.4rem,5.4vw,4.4rem)] text-forest-deep">{t(LANDING.finalTitle, lang)}</h2>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-[0.95rem] leading-7 text-forest/75">{t(LANDING.finalLead, lang)}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -186,7 +193,7 @@ export function FinalCta({ lang }: { lang: Lang }) {
               </Button>
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-forest/15 pt-5 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-forest/55">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-forest/15 pt-5 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-forest/75">
             <span className="flex items-center gap-1.5"><Check className="size-3" /> {lang === "ar" ? "بيانات محاكاة" : lang === "en" ? "Simulated data" : "Données simulées"}</span>
             <span className="flex items-center gap-1.5"><Check className="size-3" /> {lang === "ar" ? "بدون تسجيل" : lang === "en" ? "No sign-up" : "Sans inscription"}</span>
             <span className="flex items-center gap-1.5"><Check className="size-3" /> {lang === "ar" ? "3 دقائق" : lang === "en" ? "3 minutes" : "3 minutes"}</span>

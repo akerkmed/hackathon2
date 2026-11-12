@@ -9,7 +9,7 @@ export function BrandMark({ className, tone = "dark" }: { className?: string; to
       <svg viewBox="0 0 32 32" className="size-5" fill="none" aria-hidden>
         <path d="M6 25V9l10 9 10-9v16" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-coral" aria-hidden />
+      <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-gold" aria-hidden />
     </span>
   );
 }

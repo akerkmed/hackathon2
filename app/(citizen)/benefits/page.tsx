@@ -111,7 +111,7 @@ export default function BenefitsPage() {
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-lime px-3 py-1.5 text-[0.72rem] font-bold text-forest-deep">
                 {formatMoney(oneOff, lang)}
-                <span className="text-[0.55rem] font-semibold text-forest/60">{t(BENEFITS.oneOffLabel, lang)}</span>
+                <span className="text-[0.55rem] font-semibold text-forest/80">{t(BENEFITS.oneOffLabel, lang)}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-paper/20 bg-paper/5 px-3 py-1.5 text-[0.72rem] font-bold text-paper">
                 {formatMoney(monthly, lang)}

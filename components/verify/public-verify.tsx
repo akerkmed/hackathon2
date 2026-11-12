@@ -427,7 +427,7 @@ export function VerifyDetail({ receipt, citizenName }: { receipt: Receipt; citiz
               </div>
               <div className="flex flex-col items-center gap-3 px-5 py-6">
                 <div className="rounded-3xl border border-paper/15 bg-white p-3">
-                  <QRCodeSVG value={`${origin}/verify/${receipt.code}`} size={148} fgColor="#0d3a2a" bgColor="#ffffff" level="M" />
+                  <QRCodeSVG value={`${origin}/verify/${receipt.code}`} size={148} fgColor="#123c4a" bgColor="#ffffff" level="M" />
                 </div>
                 <p className="text-center text-[0.55rem] leading-4 text-paper/50">{t(CHAT.receiptLead, lang)}</p>
               </div>

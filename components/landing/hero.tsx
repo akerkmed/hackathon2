@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Baby, Check, Clock3, ShieldCheck, Sparkles, Wallet } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Baby, Check, Clock3, ShieldCheck, Sparkles, Sun, Wallet } from "lucide-react";
 import type { Lang } from "@/lib/domain/types";
 import { LANDING, COMMON, t } from "@/lib/copy";
 import { Avatar, Badge, Button } from "@/components/ui";
 import { PresentationButton } from "@/components/presentation/presentation-provider";
+import { DuneHorizon, SaharanStar } from "@/components/saharan";
 import { cn } from "@/lib/format";
 
 const SERVICES = [
@@ -23,8 +24,15 @@ export function LandingHero({ lang }: { lang: Lang }) {
 
   return (
     <section className="relative overflow-hidden pb-12 pt-28 sm:pt-32 lg:pb-24 lg:pt-40">
-      <div className="pointer-events-none absolute -left-40 top-20 size-[32rem] rounded-full bg-lime/25 blur-[100px]" aria-hidden />
-      <div className="pointer-events-none absolute -right-52 top-0 size-[36rem] rounded-full bg-mint/60 blur-[120px]" aria-hidden />
+      <div
+        className="saharan-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,transparent_8%,black_42%,transparent_92%)]"
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute -left-40 top-20 size-[32rem] rounded-full bg-sand/45 blur-[100px]" aria-hidden />
+      <div className="pointer-events-none absolute -right-48 top-6 size-[36rem] rounded-full bg-saffron/20 blur-[120px]" aria-hidden />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 text-dune/30">
+        <DuneHorizon className="h-full w-full" />
+      </div>
       <div className="container-page relative">
         <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
           <div className="max-w-2xl animate-fade-up">
@@ -87,6 +95,7 @@ export function LandingHero({ lang }: { lang: Lang }) {
                   <span className="relative inline-flex size-2 rounded-full bg-emerald" />
                 </span>
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.12em] text-forest">{t(LANDING.liveLabel, lang)}</p>
+                <Sun className="size-3 text-gold" strokeWidth={2.2} />
               </div>
             </div>
 
@@ -115,7 +124,7 @@ export function LandingHero({ lang }: { lang: Lang }) {
                   <p className="truncate text-[0.7rem] font-bold text-forest">
                     {lang === "ar" ? "أسرة بنعلي" : lang === "en" ? "Benali household" : "Famille Benali"}
                   </p>
-                  <p className="text-[0.6rem] text-muted">{lang === "ar" ? "الدار البيضاء · تم التحقق" : lang === "en" ? "Casablanca · verified" : "Casablanca · vérifié"}</p>
+                  <p className="text-[0.6rem] text-muted">{lang === "ar" ? "العيون · تم التحقق" : lang === "en" ? "Laâyoune · verified" : "Laâyoune · vérifié"}</p>
                 </div>
                 <span className="ml-auto flex items-center gap-1 rounded-full bg-mint px-2 py-1 text-[0.55rem] font-bold text-forest">
                   <ShieldCheck className="size-3" />
@@ -140,8 +149,9 @@ export function LandingHero({ lang }: { lang: Lang }) {
                 ))}
               </div>
 
-              <div className="mt-4 rounded-2xl bg-forest p-4 text-paper">
-                <div className="flex items-start justify-between gap-3">
+              <div className="relative mt-4 overflow-hidden rounded-2xl bg-forest p-4 text-paper">
+                <SaharanStar className="absolute -bottom-5 -right-4 size-28 text-paper/[0.07]" />
+                <div className="relative flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[0.56rem] font-bold uppercase tracking-[0.14em] text-lime/80">{t(LANDING.liveUnlockedLabel, lang)}</p>
                     <p className="mt-1 font-display text-[1.55rem] leading-none tracking-[-0.03em] text-paper">{t(LANDING.liveUnlocked, lang)}</p>

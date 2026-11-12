@@ -70,36 +70,45 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-arabic: "IBM Plex Sans Arabic", "Tahoma", sans-serif;
 
-  --color-cream: #f6f0e4;
-  --color-cream-deep: #eee5d4;
+  /* Atlantic-dusk palette for the southern provinces: deep ocean teal,
+     saffron and terracotta on warm sand. */
+  --color-cream: #f4ecdd;
+  --color-cream-deep: #e9dcc8;
   --color-paper: #fffdf7;
-  --color-paper-soft: #fbf7ee;
-  --color-ink: #10261d;
-  --color-ink-soft: #2e4238;
-  --color-muted: #69766d;
-  --color-line: #ded4c2;
-  --color-line-soft: #ebe3d4;
-  --color-forest: #0d3a2a;
-  --color-forest-deep: #08251b;
-  --color-emerald: #13795a;
-  --color-emerald-bright: #1a9a72;
-  --color-mint: #ddf0e4;
-  --color-mint-soft: #edf7f0;
-  --color-lime: #d8f17d;
-  --color-lime-soft: #eff9cd;
-  --color-coral: #ef7d5d;
-  --color-coral-soft: #fde7df;
-  --color-gold: #c99a43;
-  --color-gold-soft: #f7ecd2;
-  --color-sky: #5a8fa8;
-  --color-sky-soft: #e3eff4;
+  --color-paper-soft: #f9f3e7;
+  --color-ink: #112a33;
+  --color-ink-soft: #2f444b;
+  --color-muted: #64747a;
+  --color-line: #d9cdb9;
+  --color-line-soft: #e7ddcc;
+  --color-forest: #123c4a;
+  --color-forest-deep: #082630;
+  --color-emerald: #1c6d77;
+  --color-emerald-bright: #268b91;
+  --color-mint: #d8edea;
+  --color-mint-soft: #ecf6f3;
+  /* The legacy "lime" token now carries the sun-warmed sand accent. */
+  --color-lime: #e9bb5f;
+  --color-lime-soft: #f9eed3;
+  --color-coral: #c56c4b;
+  --color-coral-soft: #f8e4d8;
+  --color-gold: #c28f3f;
+  --color-gold-soft: #f4e8cf;
+  --color-sky: #4a7d99;
+  --color-sky-soft: #e3eef4;
+  --color-sand: #e8d5b6;
+  --color-dune: #d6b488;
+  --color-clay: #b25f3f;
+  --color-indigo: #315972;
+  --color-indigo-soft: #e3edf3;
+  --color-saffron: #e3ad4e;
 
   --radius-4xl: 2rem;
   --radius-5xl: 2.75rem;
 
-  --shadow-lift: 0 24px 60px -28px rgba(16, 38, 29, 0.28);
-  --shadow-soft: 0 12px 40px -24px rgba(16, 38, 29, 0.24);
-  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 18px 44px -30px rgba(16, 38, 29, 0.22);
+  --shadow-lift: 0 24px 60px -28px rgba(10, 34, 44, 0.28);
+  --shadow-soft: 0 12px 40px -24px rgba(10, 34, 44, 0.24);
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 18px 44px -30px rgba(10, 34, 44, 0.22);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.45s ease-out both;
@@ -168,7 +177,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-lime);
+  background: var(--color-saffron);
   color: var(--color-forest-deep);
 }
 
@@ -297,8 +306,37 @@ a, button, input, textarea, select {
   }
 
   .dotted-grid {
-    background-image: radial-gradient(circle at 1px 1px, rgba(13, 58, 42, 0.12) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(18, 60, 74, 0.12) 1px, transparent 0);
     background-size: 22px 22px;
+  }
+
+  /* Warm desert wash used behind the marketing page and the citizen shell. */
+  .sahara-wash {
+    background-color: var(--color-cream);
+    background-image:
+      radial-gradient(ellipse 58rem 32rem at 88% -8%, color-mix(in srgb, var(--color-saffron) 16%, transparent), transparent),
+      radial-gradient(ellipse 44rem 30rem at 100% 10%, color-mix(in srgb, var(--color-sky) 12%, transparent), transparent),
+      radial-gradient(ellipse 42rem 28rem at 2% 14%, color-mix(in srgb, var(--color-sand) 46%, transparent), transparent);
+  }
+
+  /* Quiet diamond lattice inspired by Saharan textiles and zellige. */
+  .saharan-grid {
+    background-image:
+      linear-gradient(45deg, color-mix(in srgb, var(--color-gold) 13%, transparent) 25%, transparent 25%, transparent 75%, color-mix(in srgb, var(--color-gold) 13%, transparent) 75%),
+      linear-gradient(45deg, color-mix(in srgb, var(--color-gold) 13%, transparent) 25%, transparent 25%, transparent 75%, color-mix(in srgb, var(--color-gold) 13%, transparent) 75%);
+    background-position: 0 0, 12px 12px;
+    background-size: 24px 24px;
+  }
+
+  /* Thin dyed-wool trim for headers and dividers. */
+  .saharan-rule {
+    height: 3px;
+    background-image:
+      linear-gradient(135deg, var(--color-gold) 25%, transparent 25%),
+      linear-gradient(45deg, var(--color-gold) 25%, transparent 25%);
+    background-position: 0 0, 3px 0;
+    background-size: 6px 6px;
+    opacity: 0.55;
   }
 
   .skeleton {

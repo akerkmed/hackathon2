@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Menu, ShieldCheck, X } from "lucide-react";
+import { ArrowRight, Menu, Sun, X } from "lucide-react";
 import type { Lang } from "@/lib/domain/types";
 import { COMMON, LANDING, t } from "@/lib/copy";
 import { Brand, BrandMark } from "@/components/brand";
@@ -38,13 +38,14 @@ export function LandingPage() {
   };
 
   return (
-    <div className="min-h-dvh overflow-x-hidden bg-cream">
+    <div className="min-h-dvh overflow-x-hidden sahara-wash">
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          scrolled ? "border-b border-line/70 bg-cream/90 shadow-[0_8px_30px_-24px_rgba(16,38,29,0.4)] backdrop-blur-xl" : "bg-transparent",
+          scrolled ? "border-b border-line/70 bg-cream/90 shadow-[0_8px_30px_-24px_rgba(10,34,44,0.4)] backdrop-blur-xl" : "bg-transparent",
         )}
       >
+        <div className="saharan-rule opacity-60" aria-hidden />
         <div className="container-page flex h-18 items-center gap-4">
           <Brand />
           <nav className="ml-auto hidden items-center gap-7 md:flex" aria-label="Landing navigation">
@@ -122,14 +123,15 @@ export function LandingPage() {
         <FinalCta lang={lang} />
       </main>
 
-      <footer className="border-t border-line/70 bg-paper/60">
+      <footer className="relative border-t border-line/70 bg-paper/60">
+        <div className="saharan-rule absolute inset-x-0 top-0 opacity-45" aria-hidden />
         <div className="container-page py-12">
           <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
             <div>
               <Brand />
               <p className="mt-4 max-w-xs text-[0.74rem] leading-6 text-muted">{t(LANDING.footerNote, lang)}</p>
               <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-line bg-paper px-2.5 py-1 text-[0.6rem] font-semibold text-muted">
-                <ShieldCheck className="size-3 text-emerald" />
+                <Sun className="size-3 text-gold" />
                 {t(COMMON.madeIn, lang)}
               </div>
             </div>

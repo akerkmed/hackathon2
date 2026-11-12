@@ -13,7 +13,7 @@ const FIELDS = [
   { label: "Nom de l'enfant", value: "Adam Benali" },
   { label: "Date et heure", value: "07/11/2026 · 04:42" },
   { label: "Mère", value: "Yasmine Benali · CNIE BK 482 913" },
-  { label: "Établissement", value: "CHU Ibn Rochd — Casablanca" },
+  { label: "Établissement", value: "Hôpital Régional de Laâyoune" },
   { label: "Médecin", value: "Dr. S. Amrani" },
 ];
 
@@ -42,14 +42,14 @@ export async function POST(request: NextRequest) {
       "Hospital birth certificate",
     ),
     subtitle: L(
-      "CHU Ibn Rochd · scanned today",
-      "المستشفى الجامعي ابن رشد · مُسحت اليوم",
-      "CHU Ibn Rochd · scanée l youm",
-      "CHU Ibn Rochd · scanned today",
+      "Hôpital Régional de Laâyoune · scanné aujourd'hui",
+      "المستشفى الجهوي بالعيون · مُسحت اليوم",
+      "Hôpital Régional dyal Laâyoune · scanée l youm",
+      "Laâyoune Regional Hospital · scanned today",
     ),
     status: "VERIFIED",
     issuedAt: "2026-11-07",
-    authority: "CHU Ibn Rochd",
+    authority: "Hôpital Régional de Laâyoune",
     reference: `HOP-2026-${hash.slice(0, 4)}`,
     credentialHash: hash,
     icon: "file-check",

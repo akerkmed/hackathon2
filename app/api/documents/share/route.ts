@@ -23,7 +23,7 @@ const RECIPIENTS: Record<
     scopes: ["read:cnss", "read:identity"],
   },
   commune: {
-    label: L("Commune de Casablanca", "جماعة الدار البيضاء", "Commune dyal Casablanca", "Casablanca commune"),
+    label: L("Commune de Laâyoune", "جماعة العيون", "Commune dyal Laâyoune", "Laâyoune commune"),
     purpose: L(
       "Verify civil-status evidence for the birth declaration.",
       "التحقق من أدلة الحالة المدنية للتصريح بالولادة.",
@@ -53,7 +53,7 @@ const RECIPIENTS: Record<
     scopes: ["read:civil_status"],
   },
   hospital: {
-    label: L("Centre de santé Maârif", "مركز الصحة المعاريف", "Centre de santé Maârif", "Maârif health centre"),
+    label: L("Centre de santé Laâyoune", "مركز الصحة بالعيون", "Centre de santé Laâyoune", "Laâyoune health centre"),
     purpose: L(
       "Verify the vaccination record and book the next visit.",
       "التحقق من دفتر التلقيح وحجز الموعد القادم.",

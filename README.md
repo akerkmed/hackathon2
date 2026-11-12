@@ -6,6 +6,8 @@ M3ak is a life-event operating system for Moroccan public services. The chat is 
 
 Built for the hackathon theme **“services to citizens and AI chatbots”** — but deliberately not another procedure chatbot.
 
+The interface is themed around Morocco's southern provinces: an Atlantic-dusk palette (deep ocean teal, saffron and terracotta on warm sand), dune horizons and Saharan star motifs, with the demo family based in Laâyoune.
+
 ---
 
 ## Why this exists
@@ -26,7 +28,7 @@ M3ak treats the **life event** as the unit of work:
 
 ## The demo: Yasmine & Adam
 
-The demo runs on a fixed date: **10 November 2026**, Casablanca.
+The demo runs on a fixed date: **10 November 2026**, Laâyoune, in Morocco's southern provinces.
 
 **Yasmine Benali**, 32, CNSS-insured art director, gave birth to **Adam** on **7 November 2026**. She is on maternity leave; her husband Mehdi is back at work. The family does not know that one birth triggers six services, two benefits and a hard declaration deadline.
 
@@ -34,12 +36,12 @@ The demo runs on a fixed date: **10 November 2026**, Casablanca.
 
 | # | Service | Authority | Fee | Result |
 |---|---------|-----------|-----|--------|
-| 1 | Déclaration de naissance | Commune de Casablanca — Maârif | Free | Appointment **12 Nov, 10:30** |
+| 1 | Déclaration de naissance | Commune de Laâyoune — Centre | Free | Appointment **12 Nov, 10:30** |
 | 2 | Acte de naissance | Watiqa / Barid Al-Maghrib | **50 DH** (20 DH + 30 DH delivery) | 2 certified extracts, **20 Nov** |
 | 3 | Inscription CNSS / AMO | CNSS | Free | Adam registered as a dependent; AMO active |
 | 4 | Indemnité de maternité | CNSS | Free | **19 600 DH** one-off |
 | 5 | Allocations familiales | CNSS | Free | **300 DH/month** |
-| 6 | Première vaccination | Centre de santé Maârif | Free | Appointment **17 Nov, 09:30** |
+| 6 | Première vaccination | Centre de santé Laâyoune | Free | Appointment **17 Nov, 09:30** |
 
 ### The money
 
@@ -140,10 +142,10 @@ flowchart LR
 
 ### Server model
 
-- A per-session in-memory store in `globalThis` (`lib/domain/store.ts`), keyed by the `x-m3ak-session` header.
+- A per-session store in `globalThis` (`lib/domain/store.ts`), keyed by the `x-m3ak-session` header and mirrored to a temp file so an open tab survives a server restart.
 - Plans are built and validated on the server (`lib/domain/plans.ts`).
 - Execution streams **NDJSON** events, not a single opaque response (`app/api/plans/[id]/execute/route.ts`).
-- Receipts are hashed with `node:crypto` and registered in a process-local public registry.
+- Receipts are hashed with `node:crypto` and kept in a demo public registry that is also mirrored to the temp store.
 - Public verification is read-only and `noindex`.
 
 ---
@@ -195,7 +197,7 @@ Additional sources cover CNIE, DGI, ANAPEC, OFPPT, OMPIC, education, consulates,
 - **RTL** layout with mirrored navigation, arrows and spacing.
 - **Large-text mode** from the app header.
 - **Speech synthesis** for assistant messages and **speech recognition** where the browser supports the Web Speech API.
-- Semantic headings, visible focus styles, labelled controls and a high-contrast cream/forest palette.
+- Semantic headings, visible focus styles, labelled controls and a high-contrast sand/ocean palette with Saharan saffron, terracotta and dune motifs.
 - Amounts are localised and grouped per language; Arabic uses a non-breaking group separator so `19 600` stays one number in RTL.
 
 ---
@@ -234,7 +236,7 @@ At the time of writing:
 - Browser QA was run at **1440 px** and **390 px** in **French and Arabic**, covering landing, plan, consent, execution, receipt, cases, case detail, space, benefits, documents, sources, public verification, valid/invalid receipts, mobile plan panel and the 13-step presentation mode (spotlight, route transitions, pause/resume, keyboard, RTL and mobile layout, replay and exit).
 - QA result: **0 console errors, 0 page exceptions, 0 failed requests, 0 HTTP errors, 0 horizontal overflow**.
 
-The `verify` route uses a fresh receipt registry per server process. A receipt verifies while the same server process is running; restarting the dev server clears the in-memory registry.
+The demo session and receipt registries are mirrored to a temp file, so restarting the dev server no longer breaks an open tab or invalidates a receipt that was just issued. If that temp file is cleared, the first confirm falls back to rebuilding the seeded plan.
 
 ---
 
@@ -259,7 +261,7 @@ lib/
     agent.ts              deterministic intent detection, guardrails, handoff
     plans.ts              plan builder, validator, consent scopes
     executor.ts           streaming execution, case file, receipt
-    store.ts              in-memory session and receipt registries
+    store.ts              session and receipt registries, temp-file mirror
     sources.ts            22 public sources
   copy/                   FR / AR / Darija / EN copy
   i18n.ts                 L() and fill() helpers
@@ -275,7 +277,7 @@ This is a hackathon prototype, not a government service.
 
 - All services, appointments, references and payments are **simulated**.
 - There is **no integration** with Idarati, Watiqa, CNSS, DGSN, DGI or any administration.
-- Session state and the receipt registry are **in-memory** and reset when the server restarts.
+- Session state and the receipt registry are **demo-only** and mirrored to a temp file on the machine; they are not production storage.
 - There is **no authentication** or production-grade authorisation; the session header is a demo mechanism.
 - Voice input/output depends on browser support for the Web Speech API.
 - Amounts are estimates based on public sources and may change; the final decision always belongs to the administration.

@@ -9,9 +9,9 @@ type Size = "sm" | "md" | "lg" | "icon";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-forest text-paper hover:bg-forest-deep shadow-[0_12px_28px_-16px_rgba(8,37,27,0.7)]",
+    "bg-forest text-paper hover:bg-forest-deep shadow-[0_12px_28px_-16px_rgba(8,38,48,0.7)]",
   lime:
-    "bg-lime text-forest-deep hover:bg-[#c9e967] shadow-[0_12px_28px_-16px_rgba(88,110,20,0.5)]",
+    "bg-lime text-forest-deep hover:bg-[#d9a946] shadow-[0_12px_28px_-16px_rgba(120,86,20,0.5)]",
   outline: "border border-line bg-paper/60 text-ink hover:border-forest/40 hover:bg-paper",
   ghost: "text-ink-soft hover:bg-forest/6 hover:text-forest",
   soft: "bg-mint-soft text-forest hover:bg-mint",
@@ -62,7 +62,7 @@ type Tone = "neutral" | "emerald" | "lime" | "coral" | "gold" | "sky" | "dark" |
 const TONES: Record<Tone, string> = {
   neutral: "bg-cream-deep/70 text-ink-soft border-transparent",
   emerald: "bg-mint text-forest border-mint",
-  lime: "bg-lime-soft text-[#4c5e12] border-lime/60",
+  lime: "bg-lime-soft text-[#6f4f10] border-lime/60",
   coral: "bg-coral-soft text-[#9d3d25] border-coral/30",
   gold: "bg-gold-soft text-[#7d5a16] border-gold/30",
   sky: "bg-sky-soft text-[#336379] border-sky/25",

@@ -66,7 +66,7 @@ export function OutcomeSection({ lang }: { lang: Lang }) {
               <div className="my-4 hairline" />
               <div className="flex items-center gap-3">
                 <div className="rounded-xl border border-line bg-white p-1.5">
-                  <QRCodeSVG value="https://m3ak.ma/verify/M3AK-4F2A-91C8" size={74} fgColor="#0d3a2a" bgColor="#ffffff" level="M" />
+                  <QRCodeSVG value="https://m3ak.ma/verify/M3AK-4F2A-91C8" size={74} fgColor="#123c4a" bgColor="#ffffff" level="M" />
                 </div>
                 <div className="min-w-0">
                   <p className="text-[0.62rem] font-bold uppercase tracking-[0.1em] text-muted">M3AK-4F2A-91C8</p>

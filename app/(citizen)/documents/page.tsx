@@ -42,7 +42,7 @@ const RECIPIENTS: { id: string; label: Localized; purpose: Localized; icon: Icon
   },
   {
     id: "commune",
-    label: L("Commune de Casablanca", "جماعة الدار البيضاء", "Commune dyal Casablanca", "Casablanca commune"),
+    label: L("Commune de Laâyoune", "جماعة العيون", "Commune dyal Laâyoune", "Laâyoune commune"),
     purpose: L(
       "Vérifier les preuves d'état civil pour la déclaration de naissance.",
       "التحقق من أدلة الحالة المدنية للتصريح بالولادة.",
@@ -53,7 +53,7 @@ const RECIPIENTS: { id: string; label: Localized; purpose: Localized; icon: Icon
   },
   {
     id: "hospital",
-    label: L("Centre de santé Maârif", "مركز الصحة المعاريف", "Centre de santé Maârif", "Maârif health centre"),
+    label: L("Centre de santé Laâyoune", "مركز الصحة بالعيون", "Centre de santé Laâyoune", "Laâyoune health centre"),
     purpose: L(
       "Vérifier le carnet de vaccination et réserver la prochaine visite.",
       "التحقق من دفتر التلقيح وحجز الموعد القادم.",

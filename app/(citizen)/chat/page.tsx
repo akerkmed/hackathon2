@@ -392,7 +392,7 @@ export default function ChatPage() {
                           className={cn(
                             "whitespace-pre-line rounded-2xl px-3.5 py-2.5 text-[0.8rem] leading-6",
                             isUser
-                              ? "rounded-tr-md bg-forest text-paper shadow-[0_12px_24px_-20px_rgba(8,37,27,0.9)]"
+                              ? "rounded-tr-md bg-forest text-paper shadow-[0_12px_24px_-20px_rgba(8,38,48,0.9)]"
                               : "rounded-tl-md border border-line-soft bg-paper-soft text-ink-soft",
                             message.kind === "blocked" && "border-coral/30 bg-coral-soft/60 text-[#7a331f]",
                             message.kind === "handoff" && "border-sky/30 bg-sky-soft/70 text-[#295567]",

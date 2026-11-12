@@ -9,7 +9,7 @@ export const SPACE = {
     "Hada li kayhem l youm. M3ak verifa dossier dyalek deja.",
     "Here is what matters today. M3ak already checked your file.",
   ),
-  demoNow: L("Mardi 10 novembre 2026 · Casablanca", "الثلاثاء 10 نونبر 2026 · الدار البيضاء", "Tlat 10 nowembar 2026 · Casablanca", "Tuesday 10 November 2026 · Casablanca"),
+  demoNow: L("Mardi 10 novembre 2026 · Laâyoune", "الثلاثاء 10 نونبر 2026 · العيون", "Tlat 10 nowembar 2026 · Laâyoune", "Tuesday 10 November 2026 · Laâyoune"),
   activeEvent: L("Événement de vie actif", "حدث حياة نشط", "Événement de vie actif", "Active life event"),
   babyTitle: L("Adam est né.", "وُلد آدم.", "Adam tzad.", "Adam is here."),
   babyLead: L(

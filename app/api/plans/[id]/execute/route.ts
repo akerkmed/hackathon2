@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { z } from "zod";
 import { apiError, sessionFrom } from "@/lib/api/session";
+import { handleInit } from "@/lib/domain/agent";
 import { executePlan } from "@/lib/domain/executor";
 import { validatePlan } from "@/lib/domain/plans";
 import { toSnapshot } from "@/lib/domain/store";
@@ -50,7 +51,13 @@ export async function POST(
     (SCOPE_ENUM as readonly string[]).includes(scope),
   );
 
-  const validation = validatePlan(session, id, scopes);
+  let validation = validatePlan(session, id, scopes);
+  // A tab can outlive the server process that built its plan (dev restart,
+  // cleared temp store). Rebuild the seeded demo plan once before giving up.
+  if (!validation.ok && validation.error === "PLAN_NOT_FOUND" && session.plans.length === 0) {
+    handleInit(session, parsed.data.lang);
+    validation = validatePlan(session, id, scopes);
+  }
   if (!validation.ok) {
     const status = validation.error === "PLAN_NOT_FOUND" ? 404 : 409;
     return apiError(validation.error, status);

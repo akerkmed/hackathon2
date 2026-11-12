@@ -69,7 +69,7 @@ export default function CasesPage() {
         {[
           { label: t(CASES.eyebrow, lang), value: snapshot.cases.length, icon: FolderOpen, tone: "bg-mint-soft text-forest" },
           { label: t(COMMON.executing, lang), value: open, icon: Clock3, tone: "bg-gold-soft text-[#7d5a16]" },
-          { label: t(COMMON.completed, lang), value: completed, icon: Check, tone: "bg-lime-soft text-[#4c5e12]" },
+          { label: t(COMMON.completed, lang), value: completed, icon: Check, tone: "bg-lime-soft text-[#6f4f10]" },
           { label: t(CASES.receiptTitle, lang), value: snapshot.receipts.length, icon: ReceiptText, tone: "bg-cream-deep/70 text-ink-soft" },
         ].map((stat) => {
           const StatIcon = stat.icon;
