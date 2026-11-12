@@ -8,7 +8,7 @@ Built for the hackathon theme **“services to citizens and AI chatbots”** —
 
 The interface is themed around Morocco's southern provinces: an Atlantic-dusk palette (deep ocean teal, saffron and terracotta on warm sand), dune horizons and Saharan star motifs, with the demo family based in Laâyoune.
 
----
+----
 
 ## Why this exists
 
